@@ -1,35 +1,55 @@
-class Director: 
+import string
 
+class Director: 
+    '''Class that directs the game. Initiates game play
+    and makes it flow the way it should.'''
     def __init__(self):
         self.is_playing = True
+        self._word = Word()
+        self._guesser = Guesser()
+        self._terminal_service = TerminalService()
 
     def start_game(self):
-        
+        '''During game play the director does inputs, updates, and outputs.'''
+        while self.is_playing:
+            self._get_inputs()
+            self._do_updates()
+            self._do_outputs()
 
-    
     def _get_inputs(self):
-        self.guess = input("Guess a letter [a-z]: ")
+        '''Reads letter.'''
+        new_letter = self._terminal_service.read_letter("/nGuess a letter [a-z]: ")
+        '''What here?'''
     
     def _do_updates(self):
-
-
-    def _do_inputs(self):
-
+        '''Keeps track of guesses'''
+        
+    def _do_outputs(self):
+        hint = self._word.letter_check
 
 
 
 class Word:
 
     def __init__(self):
-
-
-    def hidden_word(self):
+        pass
 
     
-    def letter_check(self, )
-    
+    def letter_check(self):
+        '''Compares letter guess to random word.'''
+        pass
 
-class Game_board:
+class Guesser:
+    def __init__():
+        pass
+
+class GameBoard:
+    def __init__():
+        pass
+
+class TerminalService():
+    def __init__():
+        pass
 
 
 class WordArray:
